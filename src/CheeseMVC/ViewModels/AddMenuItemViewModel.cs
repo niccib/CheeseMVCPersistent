@@ -13,11 +13,15 @@ namespace CheeseMVC.ViewModels
         public int menuID { get; set; }
         public Menu Menu { get; set; }
         public IList<SelectListItem> Cheeses { get; set; }
+
+
         public AddMenuItemViewModel() { }
+
         public AddMenuItemViewModel(Menu menu, IEnumerable<Cheese> cheeses)
         {
             Menu = menu;
             Cheeses = new List<SelectListItem>();
+
             foreach(var cheese in cheeses)
             {
                 Cheeses.Add(new SelectListItem
